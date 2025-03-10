@@ -81,6 +81,17 @@ services:
             - '/dev/shm:/dev/shm'
         networks:
             - sail
+    nginx:
+        image: nginx
+        volumes:
+            - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx/certs:/etc/nginx/certs
+        ports:
+            - "${FORWARD_SSL_PORT:-443}:443"
+        networks:
+            - sail
+        depends_on:
+            - laravel.test
 networks:
     sail:
         driver: bridge
@@ -88,6 +99,4 @@ volumes:
     sail-mariadb:
         driver: local
     sail-redis:
-        driver: local
-    sail-mysql:
         driver: local

@@ -18,7 +18,5 @@ yarn-error.log
 /.idea
 /.vscode
 
-# ignore docker related files
-docker
 # ignore composer executable
 composer.phar
