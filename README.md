@@ -11,5 +11,10 @@
   bash setup-sail.sh
   ```
 - install `docker/nginx/certificates/developoment-ca.crt` as trusted root certificate
-  - this is 
+  - this is needed to access the development site via trusted https
 - `docker compose up`
+  - to get the container running
+
+Open
+- Unprotected: http://localhost 
+- Encrypted: https://localhost  
