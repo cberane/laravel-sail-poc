@@ -12,16 +12,14 @@ class TestEvent implements ShouldBroadcastNow
 
     public function __construct(
         private string $message = 'Hello World'
-    )
-    {
-    }
+    ) {}
 
     public function broadcastOn(): array
     {
         return [
             new Channel(
                 'test-channel'
-            )
+            ),
         ];
     }
 
